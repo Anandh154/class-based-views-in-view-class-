@@ -17,10 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app.views import *
+from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('fbv_str/',fbv_str,name='fbv_str'),
     path('CbvStr/',CbvStr.as_view(),name='CbvStr'),
     path('CbvView/',CbvView.as_view(),name='CbvView'),
     path('CbvTemp/',CbvTemp.as_view(),name='CbvTemp'),
+    path('Data_render/',Data_render.as_view(),name='Data_render'),
+    path('anandh/',TemplateView.as_view(template_name='anandh.html'),name='anandh'),
+    path('Cbv_Mf/',Cbv_Mf.as_view(),name='Cbv_Mf'),
+    path('fbv_mf/',fbv_mf,name='fbv_mf'),
 ]
